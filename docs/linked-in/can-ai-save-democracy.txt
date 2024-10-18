@@ -1,0 +1,415 @@
+------------------------------
+   CAN A.I. SAVE DEMOCRACY?
+------------------------------
+REPLICATE.AI:
+
+import replicate
+ 
+>> client = replicate.Client(...)
+>>> model = "meta/meta-llama-3-8b-instruct"
+>>> prompt = "Why is the sky orange at sunset?"
+>>> output = client.run(
+...     model,
+...     input={"prompt": prompt}
+... )
+>>> print(output)
+
+
+
+# ['https://replicate.delivery/yhqm/hqSsNRHBbr7qJtsQoEgZ7zPPTfgnxjPU8EIaRfimlT4av7dTA/out-0.jpg']
+------------------------------
+
+embeddings = HuggingFaceEmbeddings(model_name=embeddings_model_name)
+
+client = chromadb.PersistentClient(path="db")
+client = chromadb.PersistentClient(path="db_default")
+
+collection = client.get_collection(name='pdf_pages')
+
+. . . . . . . . . . . . . . . . . . . . . .
+
+collection = client.get_collection(name='langchain', embedding_function=embeddings)
+collection = client.get_collection(name='langchain', embedding_function=embeddings.embed_query)
+
+
+results = collection.query( )
+
+
+
+
+
+
+
+from constants import CHROMA_SETTINGS
+
+    # Create embeddings
+    embeddings = HuggingFaceEmbeddings(model_name=embeddings_model_name)
+
+    db = Chroma(persist_directory=persist_directory, embedding_function=embeddings, client_settings=CHROMA_SETTINGS)
+        collection = db.get()
+
+results = collection.query(
+    query_texts='THIS IS AN INFORMATIONAL PUBLICATION. BASED ON THE PROVIDED CONTEXT, display a breakdown of the TOTAL COSTS for Proposition 3? Be sure to include Borrowing, Repayment period and Annual repayment cost for Proposition 3.  If unknown, simply say "UNKNOWN"',
+    n_results=5,
+)
+
+{'ids': [['page_99', 'page_40', 'page_36']], 'distances': [[1.038918137550354, 1.0827841758728027, 1.0982933044433594]], 'metadatas': [[None, None, None]], 'embeddings': None, 'documents': [[
+------------------------------
+
+EMOJI's:  https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/
+
+
+Does Streamlit:
+
+	... offer persistence, e.g. via:
+		- SQLite
+		- Access logs
+		- Other
+
+LangChain:
+
+	- How to enable "tracing"?
+	- debugging?
+
+
+* Government "trust" slider (w/ smileys)
+
+Contact Me
+
+	- My name is Mark and I'm "All-In" on A.I.  Reach out if you have product ideas to discuss...
+
+Trust-o-meter
+
+	- What's your name?
+
+	- Overall, how much do you trust "government"? (city, state, federal)
+	- How much do you trust your *CITY* government (0-100)?
+	- How much do you trust your *STATE* government (0-100)?
+	- How much do you trust your *FEDERAL* government (0-100)?
+
+	SUGGESTION BOX:
+
+	- What's _one thing_  civic leaders can do better? [_______________]
+
+	[SUBMIT] --> *email* Why do we require email?  It's the simplest way to make sure everyone get's one vote!
+
+
+
+Winners & Losers
+
+	( ) Prop 1 (radio buttons)
+	( ) Prop 2
+	...
+	( ) Prop X
+
+	Who stands to gain & who stands to lose from this proposition?
+
+
+Trojan Horses...
+
+	- Are there any "Trojan horse" provisions in this prop.?
+	- Are there any contradictions in this prop.?
+	- Are there any sunset clauses (phase-outs) to be aware of?
+	- Are there apsects to thie prop. that are vague or unclear?
+
+
+Show Me The Money!
+
+	- What is the total cost for this proposal?
+	- How much will *NOT* doing this cost?
+
+	[ ] Me (individuals)
+	[ ] Businesses
+	[ ] Government
+	[X] Everyone
+
+Your turn...
+
+	https://weaviate-magic-chat.streamlit.app/  ("Hot-buttons", BM25, Vector, ...)
+
+	Voters-Guide-GPT allows you to have a conversation with the 2024 CA Voter's Guide -- ask it anything:
+
+	- chat history / CLEAR
+
+	(!) thumbs up/down
+	(!) follow-up questions ...
+
+Picture Freedom ... (*MAYBE*)
+
+Suggestion Box
+
+	- How can we make this site better?
+
+---------------------
+Speak to me like ...
+
+... a 4th grader
+
+... an 8th grader
+
+... a college student
+
+... a lawyer
+
+
+
+
+
+
+import PyPDF2
+
+with open('./docs/ingest/ca-voter-guide.pdf', 'rb') as pdf_file:
+    reader = PyPDF2.PdfReader(pdf_file)
+    for page in reader.pages:
+        print(page.extract_text())
+
+
+=> Fine-tune llama3.2: https://www.youtube.com/watch?v=ERZ0_3yhUFE
+
+........................................................................
+
+Can A.I. *save* Democracy?  
+
+Does democracy need saving?  You be the judge.  Take my Government Trustworthiness survey below -- either anonymously or you can include your name:
+
+<survey>
+
+In this context "trustworthiness" means the following:
+
+* How well-run and well-managed is government?
+* How much good does the government accomplish, relative to its cost (i.e. taxes)?
+* How efficiently does government manage affairs?
+* How *fair* is government in its treatment of the "average" citizen?
+
+All answers will be forward to the NSA for further "analysis".  Just kidding.  But when I've amassed enough responses, I will post a summary of findings here.
+
+THE PROBLEM WITH GOVERNMENT:
+
+The problem with government is that there's just so *much* of it.  And all those government personnel are not doing nothing.  They are quite prolific at passing resolutions, regulations, bills, etc.  As citizens it's easy to be overwhelmed by the vast troves of information -- which seems to be one of the chief outputs of government.
+
+
+
+1.  Government is huge -- and growing.
+
+2.  Governemnt is overly prolific.
+
+3.  Citizens are overwhelmed.
+
+
+
+1.  Government is huge -- and growing.
+
+Just how big is "government"?  The best proxy I can think of is the number of ".gov" domains.  Only verified U.S. government organizations are eligible and government organizations at any level (local, state, federal) are eligible for .gov domains.
+
+Therefore using this proxy, here is a breakdown of the # of goverment agencies at all the various levels:
+
+1370 Federal Agencies
+
+	stopfakes.gov,Federal - Executive,Department of Commerce
+	uscapital.gov,Federal - Legislative,Architect of the Capitol
+	cybercareers.gov,Federal - Executive,Office of Personnel Management
+
+1254 State or territory Non-Federal Agency
+
+
+5661 City Non-Federal Agency
+1912 County Non-Federal Agency
+243 Tribal Non-Federal Agency
+448 Special district Non-Federal Agency
+
+1370 Federal agencies: these are at the U.S. government’s legislative, executive, or judicial branches
+
+Interstate: an organization of two or more states
+State or territory: one of the 50 U.S. states, the District of Columbia, American Samoa, Guam, Northern Mariana Islands, Puerto Rico, or the U.S. Virgin Islands
+Tribal: a tribal government recognized by the federal or a state government
+County: a county, parish, or borough
+City: a city, town, township, village, etc.
+Special district: an independent government that delivers specialized, essential services
+School district: a school district that is not part of a local government
+
+There 11,332 unique local, tribal, city, state and federal government agencies, according to this metric.  What are they all doing??
+
+
+
+USA.gov provides a basic starting point for navigating all this governnent beauracracy.
+
+2.  Governemnt is overly prolific.
+
+The OCC website (Office of the Currency Controller) consists of 16244 unique web pages.  Interspersed among those pages are some 118575 PDF documents, covering proceedings, new rules and guidelines and regulations.
+
+How does one stay appraised about recent and relevant updates, given this vast array of information?
+
+
+Even the City of San Diego's website has ~ 4,000 web pages and contain > 100,000 documents (according to my latest crawl).
+
+Or how about the City of San Diego.  Its  	
+
+
+Much of this information is innocuous.  But some of it ends up metastisizing into poorly conceived or poorly written laws.
+
+
+cityattorneyreports
+citybulletin_publicnotices LandUseAndDevelopment
+PublicHearings, etc.
+
+3.  Citizens are overwhelmed.
+
+
+How can any citizenry remain modestly informed -- much less engaged -- amidst such a surfeit of "information"?
+
+* The Patriot Act -- 401 pages; laid the groundwork our modern surveillance state -- have you read it?
+* The Affordable Care Act -- 955 pages; there's a *LOT* in there -- have you read it?
+* The Inflation Reduction Act -- 255 pages; estimates are $780 Billion to $1.2 Trillion of new spending -- have you read it?
+
+This is where AI can demonstrate its value in a produn
+
+
+
+Not sure.  But it can definitely shore-up its foundations.  How?
+
+By restoring the general public's trust through increased TRANSPARENCY & CLARITY.
+
+Government is the chief vehicle by which democratic principles are enforced -- "government" here is taken to the mean sum total of all local, city, state and federal agencies.
+---
+“Secrecy in government is fundamentally anti-democratic, perpetuating bureaucratic errors. 
+Open debate and discussion of public issues are vital to our national health. 
+On public questions there should be ‘uninhibited, robust, and wide-open’ debate.” 
+---
+
+
+
+
+
+
+TRANSPARENCY - Transparency breeds trust.  The problem is that laws get passed in the dark of night without 
+
+CLARITY - 
+
+<humor>
+
+The Patriot Act -- have you read it?  Neither have I.  It's 1000 pages.
+
+* There ~ 438 federal government agencies.  What do they all do???
+
+- The CA state assembly is *notorious* for passing questionable legislation.
+
+Here are some areas where I believe AI can have an outsize impact on the legislative process:
+
+1.  What exactly is in the "Inflation Reduction Act"?  What sorts of carve-outs or set-asides does it contain?  Does it contain language which is overtly favorable to a small cadre of special interests?
+
+1.  What's the track record of my local representative?  My state representative?  My congressperson?
+
+2.  How may new laws were added to the books this year?  And what are their implications?
+
+3.  Holistically, what does the composite legal landscape look like when surveyed in aggregate?
+
+4.  What sorts of things are being discussed in City Hall?  What are the outcomes?
+
+5.  Are there any generous, new tax credits on the books?
+
+MAIN IDEA:
+
+
+$ grep "Federal -" gov-current-full-2024-09-09.csv | shuf -n 10
+$ awk -F',' '{print $2, $3}' gov-current-full-2024-09-09.csv | sort | uniq -c
+
+-------------------------
+
+To ensure the **greatest accuracy** in LLM query results when using **LangChain** with **ChromaDB** and your uploaded document (the **California Voter Guide PDF**), you can follow a structured strategy that involves optimizing the retrieval process, leveraging metadata, and ensuring proper chunking and context management.
+
+### 1. **Optimize Document Chunking**:
+   Large documents like the California Voter Guide require breaking down into manageable chunks that preserve context. Here’s how to ensure accurate responses:
+
+   - **Chunk Size**: Split the document into chunks that are **small enough to fit within the LLM’s token limit**, but large enough to maintain context (e.g., **300-500 words per chunk**).
+   - **Overlap**: Use **sliding windows** with some overlap between chunks (e.g., 50-100 words of overlap). This helps maintain continuity, especially when the LLM might need context from adjacent sections.
+   
+   **Code Example** (for chunking with overlap):
+   ```python
+   from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+   # Load your PDF into text format, then split it into chunks
+   text_splitter = RecursiveCharacterTextSplitter(
+       chunk_size=500,
+       chunk_overlap=100
+   )
+   chunks = text_splitter.split_text(loaded_pdf_text)
+   ```
+
+### 2. **Leverage Metadata and Filtering**:
+   Use metadata tags (such as page numbers, proposition numbers, or section titles) to ensure the LLM only considers relevant parts of the document. Here’s how you can do this:
+
+   - **Tagging during Embedding**: When embedding chunks in ChromaDB, add metadata like `"page_number"`, `"proposition_number"`, or `"section_title"`.
+   - **Query Filtering**: During query time, extract key metadata (like the proposition number from the user query) and apply metadata filters to **limit the search space** to relevant sections.
+
+   **Example**:
+   ```python
+   # Example metadata extraction and filtering
+   metadata_filter = {"proposition_number": 5}  # if querying Prop. 5
+   retriever.set_search_kwargs({"filter": metadata_filter})
+   ```
+
+### 3. **Use Vector-based Retrieval (Embeddings)**:
+   Use **vector-based retrieval** to ensure semantically similar sections are retrieved, even if the exact wording doesn’t match. This helps the LLM find relevant sections even when the query phrasing differs from the text in the document.
+
+   - **Choose Advanced Embeddings**: Use high-quality embeddings like **OpenAI** or **Sentence Transformers** to embed the document chunks. The better the embeddings, the more accurate the retrieval.
+
+   **Code Example**:
+   ```python
+	   from langchain.embeddings import OpenAIEmbeddings
+	   from langchain.vectorstores import Chroma
+
+	   embeddings = OpenAIEmbeddings()  # Or any embedding model you're using
+	   vector_store = Chroma(embedding_function=embeddings)
+
+	   # Embedding documents with metadata (e.g., page number or proposition number)
+	   vector_store.add_texts(texts=chunks, metadatas=metadata_list)
+   ```
+
+### 4. **Post-Processing with a Chain Type**:
+   Choose an appropriate **chain type** to handle the retrieved chunks. Since the Voter Guide contains large sections, a chain type that processes chunks individually and combines results might be more appropriate than just concatenating everything (as done with `chain_type="stuff"`).
+
+   - **Use `map_reduce` Chain Type**: This allows the LLM to handle individual chunks separately and then combine them into a coherent final answer. It avoids token limit issues that could arise from large responses.
+   
+   **Example**:
+   ```python
+   from langchain.chains import RetrievalQA
+
+   qa = RetrievalQA.from_chain_type(
+       llm=llm,
+       chain_type="map_reduce",  # Summarizes large chunks more effectively
+       retriever=retriever
+   )
+   res = qa(query)
+   ```
+
+### 5. **Use a Summarization Step**:
+   For sections that are long or complex (such as arguments for and against propositions), consider using a summarization step before passing the result to the user. This helps the LLM deliver concise and relevant responses.
+
+   - **Summarize the Results**: After retrieving the documents, run a summarization pass on the results to generate concise responses for the user query.
+
+   **Example**:
+   ```python
+   from langchain.chains import summarize
+
+   summary_chain = summarize.SummarizeChain(llm=llm)
+   summary = summary_chain.run(res)
+   ```
+
+### 6. **Use Query Rewriting or Expansion**:
+   Enhance the user query with relevant context (such as "Proposition" or "California Voter Guide"). This helps narrow down the search and improve the LLM’s ability to find relevant results.
+
+   - **Query Expansion**: If the user query lacks context (e.g., just “What does Prop. 5 mean?”), you can rewrite the query to something more specific: “What is the full text of Proposition 5 in the California Voter Guide?”
+
+### 7. **Fine-tune the LLM**:
+   If possible, fine-tune the language model on similar documents to improve its understanding of specific terminology and formatting used in legal texts like voter guides. This helps with interpreting the structure and content more accurately.
+
+---
+
+### Summary Strategy:
+1. **Chunk the document** into manageable, overlapping sections (e.g., 500 words with 100 words overlap).
+2. **Use vector embeddings** with **metadata** tags like `"page_number"` or `"proposition_number"` to ensure semantically relevant and contextually correct sections are retrieved.
+3. Filter results based on **extracted metadata** from the query (e.g., extracting "Proposition 5" to apply a filter).
+4. Use the **`map_reduce` chain type** for post-retrieval summarization to handle large text sections and avoid truncation.
+5. Consider **summarization** of the retrieved sections for better clarity in responses.
+
+This strategy will help maximize the **accuracy** of query results when working with large and complex documents like the **California Voter Guide**.
