@@ -1,7 +1,7 @@
 import time
 import functions
 import streamlit as st
-from langchain.llms import OpenAI
+#from langchain.llms import OpenAI
 from PIL import Image
 
 from layout_template import sidebar_template
