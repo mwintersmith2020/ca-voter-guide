@@ -2,6 +2,7 @@ __pycache__
 _pages
 _scratch
 _temp
-db
-docs
+db/
+docs/
 voter-env
+_articles
