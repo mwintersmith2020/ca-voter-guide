@@ -1,2 +1,2 @@
-chromadb==0.4.1666666
+chromadb==0.4.16
 replicate==1.0.2
