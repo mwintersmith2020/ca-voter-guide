@@ -5,3 +5,5 @@ _temp
 docs/
 voter-env
 _articles
+.streamlit/
+.DS_Store
