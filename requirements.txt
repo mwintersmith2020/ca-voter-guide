@@ -1,3 +1,2 @@
-chromadb
-sqlite3 > 3.35.0
-replicate
+chromadb=0.5.15
+replicate=1.0.2
