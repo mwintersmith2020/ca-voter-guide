@@ -1,2 +1,2 @@
-chromadb=0.5.15
-replicate=1.0.2
+chromadb==0.5.15
+replicate==1.0.2
