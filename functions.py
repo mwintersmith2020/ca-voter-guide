@@ -14,8 +14,10 @@ from chromadb.config import Settings
 from chromadb import Documents
 
 USER_IP = '<unknown>'
-USER_NAME = "Joe"
-st.session_state.name = ''
+#USER_NAME = "Joe"
+
+if "name" not in st.session_state:
+    st.session_state["name"] = "" 
 
 # Define the embedding function
 class ReplicateEmbeddingFunction:
@@ -66,7 +68,7 @@ CITATIONS: {CITATIONS}
     # Now do some post-processing ...
     # ... to use a markdown-compatible bullet symbol ...
     # ... to prevent '$' from trigger latex math-symbol mode ...
-    modified_text = text.replace('• ','* ').replace('$','\$')
+    modified_text = text.replace('• ','* ').replace('$','\\$')
     return modified_text
 
 # -------------------- Start initialization --------------------

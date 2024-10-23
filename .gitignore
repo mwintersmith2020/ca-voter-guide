@@ -3,7 +3,8 @@ _pages
 _scratch
 _temp
 docs/
-voter-env
+voter-env/
+py3-12-venv/
 _articles
 .streamlit/
 .DS_Store
