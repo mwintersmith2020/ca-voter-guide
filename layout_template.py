@@ -121,6 +121,8 @@ Freelance AI/ML researcher & strategist with a specialization in LLMs and posses
 
     st.markdown(text_content)
     st.markdown("*A.I.* is **really** ***cool***.  Follow me on [LinkedIn](https://www.linkedin.com/in/markwintersmith/) ")
+    logUserFeedback(f"ABOUT: {st.session_state.name} viewed your profile")
+
 
 # <audio controls>
 #   <source src="your-audio-file.m4a" type="audio/mp4">
