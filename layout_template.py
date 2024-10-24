@@ -23,6 +23,7 @@ def sidebar_template():
         show_about_me_dialog()
 
     if "name" not in st.session_state or st.session_state.name == '':
+        st.session_state["name"] = "" # placeholder so screen can continue to render ...
         user_intro_form()
 
 # Function to render the radio button in a container
