@@ -22,7 +22,7 @@ def sidebar_template():
     if st.sidebar.button("About me..."):
         show_about_me_dialog()
 
-    if st.session_state.name is None or st.session_state.name == '':
+    if "name" not in st.session_state or st.session_state.name == '':
         user_intro_form()
 
 # Function to render the radio button in a container

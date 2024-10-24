@@ -6,5 +6,4 @@ docs/
 voter-env/
 py3-12-venv/
 _articles
-.streamlit/
 .DS_Store
