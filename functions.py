@@ -95,7 +95,7 @@ persist_directory = os.environ.get("PERSIST_DIRECTORY", "db")
 target_source_chunks = int(os.environ.get('TARGET_SOURCE_CHUNKS',5))
 
 logging.info("Initializing chroma db...")
-client = chromadb.PersistentClient(path=persist_directory)
+client = chromadb.PersistentClient(path=persist_directory, settings=Settings(anonymized_telemetry=False))
 
 logging.info("Initializing embedding function...")
 embedding_function = ReplicateEmbeddingFunction()
