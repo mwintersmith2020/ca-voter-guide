@@ -119,8 +119,6 @@ Freelance AI/ML researcher & strategist with a specialization in LLMs and posses
     st.subheader("Mark Wintersmith", divider="gray")
 
     st.markdown(text_content)
-    st.markdown("*A.I.* is **really** ***cool***.  Follow me on [LinkedIn](https://www.linkedin.com/in/markwintersmith/) ")
+    st.markdown("   *A.I.* is **really** ***cool***.`   `|`   `Let's connect on [LinkedIn](https://www.linkedin.com/in/markwintersmith/)`   `|`   `:orange[music performed by Tyden Wintersmith]")
 
-# <audio controls>
-#   <source src="your-audio-file.m4a" type="audio/mp4">
-# </audio>
+    st.audio("img/music-01.mp3", format="audio/mpeg", loop=True, autoplay=True)
