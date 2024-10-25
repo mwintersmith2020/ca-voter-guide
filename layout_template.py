@@ -1,4 +1,3 @@
-# layout_template.py
 import functions
 import streamlit as st
 from PIL import Image
@@ -23,6 +22,7 @@ def sidebar_template():
         show_about_me_dialog()
 
     if "name" not in st.session_state or st.session_state.name == '':
+        st.session_state["name"] = "" # placeholder so screen can continue to render ...
         user_intro_form()
 
 # Function to render the radio button in a container
@@ -120,5 +120,6 @@ Freelance AI/ML researcher & strategist with a specialization in LLMs and posses
 
     st.markdown(text_content)
     st.markdown("   *A.I.* is **really** ***cool***.`   `|`   `Let's connect on [LinkedIn](https://www.linkedin.com/in/markwintersmith/)`   `|`   `:orange[music performed by Tyden Wintersmith]")
+    logUserFeedback(f"ABOUT: {st.session_state.name} viewed your profile")
 
     st.audio("img/music-01.mp3", format="audio/mpeg", loop=True, autoplay=True)
