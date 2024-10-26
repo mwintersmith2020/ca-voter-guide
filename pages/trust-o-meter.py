@@ -53,6 +53,5 @@ suggestions.subheader("Suggestion Box", divider="gray")
 feedback = suggestions.text_area("What's _one thing_  civic leaders can do better?", max_chars=200, placeholder="Our leaders should...")
 
 if st.button("Submit my feedback", type="secondary"):
-    logUserFeedback(f"{PAGE}: overall= {overall_value}, city= {city_value}, state= {state_value}, federal= {federal_value}")
-    logUserFeedback(f"{PAGE}: feedback= {feedback}")
+    logUserFeedback(f"{PAGE}: overall= {overall_value}, city= {city_value}, state= {state_value}, federal= {federal_value}, feedback= {feedback}")
     st.success("Feedback submitted successfully!")

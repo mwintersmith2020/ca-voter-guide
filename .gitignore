@@ -7,3 +7,4 @@ voter-env/
 py3-12-venv/
 _articles
 .DS_Store
+.streamlit/secrets.toml

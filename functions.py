@@ -9,12 +9,24 @@ import requests
 import streamlit as st
 import chromadb
 import replicate
+import pandas as pd
 
 from chromadb.config import Settings
 from chromadb import Documents
+from datetime import datetime
 
+import streamlit as st
+from streamlit_gsheets import GSheetsConnection
+
+
+
+
+
+
+#---------------------------
 USER_IP = '<unknown>'
-#USER_NAME = "Joe"
+LOGGING_DF = None
+GSHEET_CONN = None
 
 if "name" not in st.session_state:
     st.session_state["name"] = "" 
@@ -27,9 +39,31 @@ class ReplicateEmbeddingFunction:
             input={"text": json.dumps(input)}
         )
         return [item["embedding"] for item in embedding_dict]
-    
+
+def initializeGSheet():
+    return st.connection("gsheets", type=GSheetsConnection)
+
+def initializeDataFrame(conn):
+    return conn.read(worksheet="st_user_logs")
+
+def appendDataFrame(input_df, user_ip, message):
+    new_entry = {
+        'timestamp': [datetime.now()],
+        'IP': [user_ip],
+        'log_message': [message]
+    }
+    append_df = pd.DataFrame(new_entry)
+    output_df = pd.concat([input_df, append_df], ignore_index=True)
+    return output_df
+
 def logUserFeedback(message):
+    global LOGGING_DF  # Ensure LOGGING_DF is treated as a global variable
+    global GSHEET_CONN
+
     logging.info(f"{USER_IP}: {message}")
+    #pdb.set_trace()
+    LOGGING_DF = appendDataFrame(LOGGING_DF, USER_IP, message)
+    GSHEET_CONN.update(worksheet="st_user_logs", data=LOGGING_DF)
 
 def getContext(criterion_text):
     results = collection.query(
@@ -86,6 +120,12 @@ logging.info("Initializing variables ...")
 ip_request = requests.get('https://api.ipify.org?format=json')
 USER_IP = ip_request.json()['ip']
 logging.info(f"USER_IP= {USER_IP}")
+
+logging.info("Initializing google sheets ...")
+GSHEET_CONN = initializeGSheet()
+
+logging.info("Initializing dataframe logging ...")
+LOGGING_DF = initializeDataFrame(GSHEET_CONN)
 
 # -------------------- Initialize models --------------------
 
