@@ -54,11 +54,14 @@ def appendDataFrame(input_df, user_ip, message):
     return output_df
 
 def logUserFeedback(message):
-    global LOGGING_DF  # Ensure LOGGING_DF is treated as a global variable
+    # global LOGGING_DF  # Ensure LOGGING_DF is treated as a global variable
     global GSHEET_CONN
 
     logging.info(f"{USER_IP}: {message}")
     USER_NAME = st.session_state["name"]
+    
+    # Refresh & append to sheet ...
+    LOGGING_DF = GSHEET_CONN.read(worksheet="st_user_logs")
     LOGGING_DF = appendDataFrame(LOGGING_DF, USER_IP, f"[{USER_NAME}] {message}")
     GSHEET_CONN.update(worksheet="st_user_logs", data=LOGGING_DF)
 
