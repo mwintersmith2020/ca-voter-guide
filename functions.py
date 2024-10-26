@@ -58,8 +58,8 @@ def logUserFeedback(message):
     global GSHEET_CONN
 
     logging.info(f"{USER_IP}: {message}")
-    #pdb.set_trace()
-    LOGGING_DF = appendDataFrame(LOGGING_DF, USER_IP, message)
+    USER_NAME = st.session_state["name"]
+    LOGGING_DF = appendDataFrame(LOGGING_DF, USER_IP, f"[{USER_NAME}] {message}")
     GSHEET_CONN.update(worksheet="st_user_logs", data=LOGGING_DF)
 
 def getContext(criterion_text):
