@@ -7,9 +7,11 @@ import time
 import pdb
 import requests
 import streamlit as st
+import sqlite3
 import chromadb
 import replicate
 import pandas as pd
+
 
 from chromadb.config import Settings
 from chromadb import Documents
@@ -17,11 +19,6 @@ from datetime import datetime
 
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
-
-
-
-
-
 
 #---------------------------
 USER_IP = '<unknown>'
@@ -116,6 +113,7 @@ embeddings_model_name = os.environ.get("EMBEDDINGS_MODEL_NAME", "hkunlp/instruct
 
 logging.basicConfig(level=logging.INFO)
 logging.info("------------ New Session ------------")
+logging.info(f"Checking SQLite version: {sqlite3.sqlite_version}")
 logging.info("Initializing variables ...")
 ip_request = requests.get('https://api.ipify.org?format=json')
 USER_IP = ip_request.json()['ip']
