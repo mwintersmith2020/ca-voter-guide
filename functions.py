@@ -7,9 +7,11 @@ import time
 import pdb
 import requests
 import streamlit as st
+import sqlite3
 import chromadb
 import replicate
 import pandas as pd
+
 
 from chromadb.config import Settings
 from chromadb import Documents
@@ -52,12 +54,15 @@ def appendDataFrame(input_df, user_ip, message):
     return output_df
 
 def logUserFeedback(message):
-    global LOGGING_DF  # Ensure LOGGING_DF is treated as a global variable
+    # global LOGGING_DF  # Ensure LOGGING_DF is treated as a global variable
     global GSHEET_CONN
 
     logging.info(f"{USER_IP}: {message}")
-    #pdb.set_trace()
-    LOGGING_DF = appendDataFrame(LOGGING_DF, USER_IP, message)
+    USER_NAME = st.session_state["name"]
+    
+    # Refresh & append to sheet ...
+    LOGGING_DF = GSHEET_CONN.read(worksheet="st_user_logs")
+    LOGGING_DF = appendDataFrame(LOGGING_DF, USER_IP, f"[{USER_NAME}] {message}")
     GSHEET_CONN.update(worksheet="st_user_logs", data=LOGGING_DF)
 
 def getContext(criterion_text):
@@ -119,6 +124,7 @@ embeddings_model_name = os.environ.get("EMBEDDINGS_MODEL_NAME", "hkunlp/instruct
 
 logging.basicConfig(level=logging.INFO)
 logging.info("------------ New Session ------------")
+logging.info(f"Checking SQLite version: {sqlite3.sqlite_version}")
 logging.info("Initializing variables ...")
 ip_request = requests.get('https://api.ipify.org?format=json')
 USER_IP = ip_request.json()['ip']
