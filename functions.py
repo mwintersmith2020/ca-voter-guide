@@ -18,11 +18,6 @@ from datetime import datetime
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 
-
-
-
-
-
 #---------------------------
 USER_IP = '<unknown>'
 LOGGING_DF = None
@@ -66,11 +61,19 @@ def logUserFeedback(message):
     GSHEET_CONN.update(worksheet="st_user_logs", data=LOGGING_DF)
 
 def getContext(criterion_text):
+    CLEAN_FILTER = criterion_text.replace(':green[','')
+
     results = collection.query(
         query_texts=criterion_text,
         n_results=target_source_chunks,
+        where={
+            'source': 'ca-voter-guide-2024' if CLEAN_FILTER.lower().startswith('prop') 
+               else 'san-diego-voter-guide-2024' if CLEAN_FILTER.lower().startswith('measure') 
+               else ''
+            },
     )
     citations = '\n'.join(results['documents'][0])
+    pdb.set_trace()
     return citations
 
 def getPrediction(prompt_template):

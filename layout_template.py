@@ -48,6 +48,9 @@ def render_radio():
                 "Proposition 34 - **Restricts Spending of Prescription Drug Revenues by Health Care Providers.**",
                 "Proposition 35 - **Provides Permanent Funding for Medi-Cal Health Care Services.**",
                 "Proposition 36 - **Allows Felony Charges and Increases Sentences for Drug and Theft Crimes.**",
+
+                ":green[Measure G] - **Focused on transportation, infrastructure, and safety improvements within San Diego County.**",
+                ":green[Measure X] - **Specific to the City of Oceanside, this addresses funding for general city services like infrastructure, public safety, and emergency response.**",
             ],
             index=0,
             key="selected_prop"  # Use session state key to persist value
