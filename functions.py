@@ -82,7 +82,7 @@ def getContext(criterion_text):
             },
     )
     citations = '\n'.join(results['documents'][0])
-    pdb.set_trace()
+    
     return citations
 
 def getPrediction(prompt_template):
